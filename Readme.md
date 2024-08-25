@@ -16,6 +16,7 @@ Thank you for participating in our Java skills assessment. Please carefully foll
 ## Important:
 - Make sure not to share your repository link with others to maintain the integrity of the assignment.
 - Your submission will be reviewed based on correctness, code quality, and overall approach.
+- Please visit the assessment-java-overview.md file to view details of the assignment.
 
 ## Submission Deadline:
 Please ensure you submit your solution no later than 2nd September. 
