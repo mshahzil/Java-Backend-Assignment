@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -29,6 +31,14 @@ public class BlogPost {
     @Column(nullable = false, length = 5000)
     private String content;
 
+    /**
+     * Each blog post is associated with a single user (author), but a user can have multiple blog posts.
+     * The 'author_id' column in the blog_post table is the foreign key referencing the user table.
+     */
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
+    private User author;
+    
     @Column(updatable = false)
     private LocalDateTime createdAt;
     
