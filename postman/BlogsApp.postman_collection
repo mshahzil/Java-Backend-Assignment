@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "d8c97d2a-0702-46c3-8c55-1115e6d925e8",
+		"name": "Blogs App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Blog Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/blogpost/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogpost",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Blog Post By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/blogpost/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogpost",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"shahzil\",\r\n    \"password\": \"shahzil123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Blog Post",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "clientSecret",
+							"value": "11c0697dae018353ef0638ce5753e358246f30c7",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "Ov23limi7TFng7OnU5yf",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://github.com/login/oauth/access_token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://github.com/login/oauth/authorize",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8080/login/oauth2/code/github",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "LoginToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Sample Blog Post Title\",\r\n    \"content\": \"This is a sample blog post content.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/blogpost/create?username=shahzil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogpost",
+						"create"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "shahzil"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Blog Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Sample Blog Post Title Updated\",\r\n    \"content\": \"This is a sample blog post content.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/blogpost/update/1?username=shahzil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogpost",
+						"update",
+						"1"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "shahzil"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blog Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/blogpost/delete/1?username=shahzil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"blogpost",
+						"delete",
+						"1"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "shahzil"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
