@@ -1,26 +1,74 @@
-# Java Skills Test Assignment Submission
+# Blog Posts CRUD Application
 
-Thank you for participating in our Java skills assessment. Please carefully follow the instructions below to complete and submit your assignment.
+This is a Spring Boot application that performs CRUD operations (Create, Read, Update, Delete) for blog posts.
 
-## Instructions:
+## Features
 
-1. **Fork the Assignment Repository:**  
-   Create a **public fork** of it in your GitHub account.
+- Create a new user
+- Create a new blog post
+- Retrieve a list of all blog posts
+- Retrieve a single blog post by ID
+- Update an existing blog post
+- Delete an existing blog post
 
-2. **Complete the Assignment:**  
-   Work on the assignment in your forked repository. Ensure that your solution is complete and thoroughly tested.
+## Technologies Used
 
-3. **Submit Your Solution:**  
-   Once you have completed the assignment, submit the link to your **forked repository** using the Google Form link provided. Please ensure that your repository is public so we can review your solution.
+- **Java 17**
+- **Spring Boot 3.3.3**
+- **Spring Data JPA**: For simplifying database interactions
+- **H2 Database**: An in-memory database for testing purposes
+- **Lombok**: For reducing boilerplate code (e.g. getters, setters, etc.)
+- **Maven**: For project build and dependency management
+- **Postman**: For API testing
 
-## Important:
-- Make sure not to share your repository link with others to maintain the integrity of the assignment.
-- Your submission will be reviewed based on correctness, code quality, and overall approach.
-- Please visit the assessment-java-overview.md file to view details of the assignment.
+## Getting Started
 
-## Submission Deadline:
-Please ensure you submit your solution no later than 2nd September. 
+### Prerequisites
 
-If you have any questions or face any issues, feel free to reach out to us via the provided contact details.
+To build and run this application, you will need:
 
-We look forward to reviewing your solution. Best of luck!
+- **JDK 17** or higher
+- **Maven 3.6.3** or higher
+- **Git**
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/mshahzil/Java-Backend-Assignment.git
+cd blogs-app
+```
+
+### Build and Run the Application
+
+To build and run the application locally, use the following commands:
+
+```bash
+mvn clean install
+mvn spring-boot:run
+```
+
+The application will start on `http://localhost:8080`.
+
+## API Endpoints
+
+| Method | Endpoint                                            | Description                    |
+|--------|-----------------------------------------------------|--------------------------------|
+| POST   | `/api/user/create`                                  | Create a new user              |
+| POST   | `/api/blogpost/create?username=shahzil`             | Create a new blog post         |
+| GET    | `/api/blogpost/get`                                 | Get a list of all blog posts   |
+| GET    | `/api/blogpost/get/1`                               | Get a blog post by ID          |
+| PUT    | `/api/blogpost/update/1?username=shahzil`           | Update a blog post by ID       |
+| DELETE | `/api/blogpost/delete/1?username=shahzil`           | Delete a blog post by ID       |
+
+## Postman Collection
+
+A Postman collection has been provided to help test the API endpoints. You can find it in the repository at the following path:
+
+/postman/BlogsApp.postman_collection
+
+To use the collection, follow these steps:
+
+1. Open Postman.
+2. Go to File -> Import.
+3. Select the BlogsApp.postman_collection file from the postman directory of the repository.
+4. The collection will be added to your Postman workspace.
